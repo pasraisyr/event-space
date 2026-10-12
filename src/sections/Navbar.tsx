@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-
+import { Menu, X, Phone } from 'lucide-react';
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,22 +20,27 @@ export const Navbar: React.FC = () => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <a href="#" className="logo-container">
-          <span className="logo-text">VILLA <span className="logo-sub">ASTANA</span></span>
+          <div className="logo-content">
+            <span className="logo-eyebrow">RUMAH</span>
+            <span className="logo-main">Seri Harmoni</span>
+            <span className="logo-sub">MELAYU • NUSANTARA</span>
+          </div>
         </a>
         
         <nav>
           <ul className={`nav-links ${isMobileMenuOpen ? 'open' : ''}`}>
             <li><a href="#" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Utama</a></li>
             <li><a href="#fasiliti" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Fasiliti</a></li>
-            <li><a href="#majlis" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Kesesuaian</a></li>
+            <li><a href="#majlis" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Kesesuaian Majlis</a></li>
             <li><a href="#galeri" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Galeri</a></li>
-            <li><a href="#pakej" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Pakej & Harga</a></li>
-            <li><a href="#faq" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>FAQ</a></li>
+            <li><a href="#tempah" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Borang Tempahan</a></li>
           </ul>
         </nav>
 
         <div className="nav-cta">
-          <a href="#kalkulator" className="btn btn-primary btn-sm">Bina Pakej</a>
+          <a href="#tempah" className="btn btn-primary btn-sm">
+            <Phone size={14} /> Tempah Sekarang
+          </a>
         </div>
 
         <button 

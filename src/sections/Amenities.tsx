@@ -1,67 +1,64 @@
 import React from 'react';
-import { Home, Sparkles, Users, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import { HouseHeart, Landmark, Users, Car } from 'lucide-react';
 
 export const Amenities: React.FC = () => {
+  const fiturList = [
+    {
+      icon: <HouseHeart size={36} />,
+      tajuk: 'Pelamin Tradisional Melayu',
+      deskripsi: 'Seni ukiran pelamin warisan Melayu Nusantara klasik, dihiasi flora segar dan pencahayaan hangat menaikkan seri raja sehari.'
+    },
+    {
+      icon: <Landmark size={36} />,
+      tajuk: 'Dewan Semi Terbuka',
+      deskripsi: 'Dewan berbumbung dengan bukaan sisi semulajadi yang nyaman, redup dan berangin sepanjang majlis berlangsung.'
+    },
+    {
+      icon: <Users size={36} />,
+      tajuk: 'Kapasiti 100 - 250 Pax',
+      deskripsi: 'Keluasan optimum dan intim, memastikan setiap tetamu dan keluarga dapat diraikan dengan penuh keselesaan.'
+    },
+    {
+      icon: <Car size={36} />,
+      tajuk: 'Parking Luas & Selamat',
+      deskripsi: 'Kawasan tempat letak kenderaan yang lapang, tersusun rapi serta selamat di perkarangan venue untuk tetamu.'
+    }
+  ];
+
   return (
     <section id="fasiliti" className="section">
       <div className="container">
         <div className="section-header">
-          <span className="badge">Kelengkapan Premium</span>
-          <h2>Fasiliti Yang Mempesonakan</h2>
-          <p>Setiap sudut Villa Astana direka khas untuk keselesaan tuan rumah dan juga semua tetamu yang diraikan.</p>
+          <span className="badge">Melayu • Nusantara</span>
+          <h2>Fasiliti Utama</h2>
+          <p>
+            Rumah Seri Harmoni menyediakan kelengkapan utama bagi menyempurnakan hari bahagia anda.
+          </p>
         </div>
 
-        <div className="amenities-grid">
-          <div className="amenity-card">
-            <div className="amenity-icon-wrapper">
-              <Home size={24} />
-            </div>
-            <h3>Dewan Semi-Terbuka</h3>
-            <p>Dewan utama berbumbung yang luas dengan sistem pengudaraan yang sejuk, selesa untuk susunan meja tetamu.</p>
-          </div>
-
-          <div className="amenity-card">
-            <div className="amenity-icon-wrapper">
-              <Sparkles size={24} />
-            </div>
-            <h3>Kolam Renang Mewah</h3>
-            <p>Kolam renang persendirian bersaiz besar dengan dek tepi kolam yang cantik untuk bergambar dan majlis bersantai.</p>
-          </div>
-
-          <div className="amenity-card">
-            <div className="amenity-icon-wrapper">
-              <Users size={24} />
-            </div>
-            <h3>Bilik Bersiap Ber-AC</h3>
-            <p>Dua bilik persediaan berhawa dingin sepenuhnya bagi memastikan pengantin atau keluarga berehat dan bersiap dengan selesa.</p>
-          </div>
-
-          <div className="amenity-card">
-            <div className="amenity-icon-wrapper">
-              <MapPin size={24} />
-            </div>
-            <h3>Laman Hijau (Outdoor Lawn)</h3>
-            <p>Halaman luar berumput permaidani yang luas, sangat sesuai untuk upacara perkahwinan, pelamin taman, atau khemah layangan.</p>
-          </div>
-
-          <div className="amenity-card">
-            <div className="amenity-icon-wrapper">
-              <Clock size={24} />
-            </div>
-            <h3>Sistem Audio & Karaoke</h3>
-            <p>Kelengkapan audio berkualiti tinggi berserta mikrofon tanpa wayar dan sistem karaoke untuk menceriakan lagi majlis anda.</p>
-          </div>
-
-          <div className="amenity-card">
-            <div className="amenity-icon-wrapper">
-              <ShieldCheck size={24} />
-            </div>
-            <h3>Parking Luas & Selamat</h3>
-            <p>Kawasan parking khas berpagar di dalam villa untuk keluarga serta kawasan parking di tepi jalan luar yang selesa.</p>
+        {/* Kotak Hijau Gelap Besar Berkembar Emas (Poster Emblem Box) */}
+        <div className="poster-emblem-banner-large">
+          <div className="emblem-grid">
+            {fiturList.map((item, index) => (
+              <React.Fragment key={index}>
+                <div className="emblem-card">
+                  <div className="emblem-icon-wrap">
+                    {item.icon}
+                  </div>
+                  <h3 className="emblem-title">{item.tajuk}</h3>
+                  <p className="emblem-desc">{item.deskripsi}</p>
+                </div>
+                {index < fiturList.length - 1 && (
+                  <div className="emblem-col-divider" aria-hidden="true" />
+                )}
+              </React.Fragment>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );
 };
+
 export default Amenities;

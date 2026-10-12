@@ -6,48 +6,46 @@ export const EventTypes: React.FC = () => {
     <section id="majlis" className="section section-alt">
       <div className="container event-grid">
         <div className="event-content">
-          <span className="badge badge-gold">Acara Anda, Gaya Anda</span>
-          <h2>Jenis Majlis & Acara</h2>
+          <span className="badge badge-gold">Acara Bertaraf Warisan</span>
+          <h2>Kesesuaian Majlis & Acara</h2>
           <p className="mt-sm" style={{ marginBottom: '1.5rem' }}>
-            Fleksibiliti reka bentuk ruang di Villa Astana membolehkan anda merancang pelbagai jenis acara berskala kecil hingga sederhana dengan konsep tersendiri.
+            Rumah Seri Harmoni direka khusus sebagai tempat event wedding tradisional berkonsepkan Melayu • Nusantara yang menampung 100 hingga 250 orang tetamu dengan penuh privasi.
           </p>
 
           <div className="event-list">
             <div className="event-item">
               <div className="event-item-icon"><Check size={20} /></div>
               <div className="event-item-content">
-                <h4>Pernikahan & Resepsi (Wedding)</h4>
-                <p>Abadikan hari bersejarah anda dengan suasana romantis bertemakan taman (*garden wedding*) atau tradisional moden.</p>
+                <h4>Majlis Perkahwinan & Resepsi Tradisional</h4>
+                <p>Meraikan pasangan mempelai di atas Pelamin Tradisional Melayu dalam Dewan Semi Terbuka berlatarkan seni bina rumah kayu klasik.</p>
               </div>
             </div>
 
             <div className="event-item">
               <div className="event-item-icon"><Check size={20} /></div>
               <div className="event-item-content">
-                <h4>Majlis Tunang & Berzanji</h4>
-                <p>Suasana lebih privasi dan intim untuk perhimpunan keluarga besar bagi meraikan persetujuan dua belah pihak.</p>
+                <h4>Majlis Akad Nikah & Pertunangan</h4>
+                <p>Suasana anjung dan serambi rumah kayu yang tenang dan syahdu, amat sesuai untuk upacara lafaz nikah dan sarung cincin penuh tertib.</p>
               </div>
             </div>
 
             <div className="event-item">
               <div className="event-item-icon"><Check size={20} /></div>
               <div className="event-item-content">
-                <h4>Sambutan Hari Lahir & Aqiqah</h4>
-                <p>Kanak-kanak dan keluarga boleh berseronok di kolam renang manakala tetamu menikmati jamuan makan di dewan berbumbung.</p>
+                <h4>Majlis Aqiqah, Berendoi & Kesyukuran</h4>
+                <p>Menghimpunkan kaum keluarga meraikan cahaya mata dengan hiasan berendoi tradisional dan jamuan makan dalam suasana desa yang nyaman.</p>
               </div>
             </div>
 
             <div className="event-item">
               <div className="event-item-icon"><Check size={20} /></div>
               <div className="event-item-content">
-                <h4>Acara Korporat & Teambuilding</h4>
-                <p>Meningkatkan ukhuwah syarikat dengan majlis makan malam santai, perhimpunan khas, atau sesi pembinaan pasukan.</p>
+                <h4>Majlis Santapan Keluarga & Korporat Bertema</h4>
+                <p>Makan malam bertemakan busana tradisional Melayu Nusantara dengan kemudahan dewan semi terbuka dan tempat meletak kenderaan yang luas.</p>
               </div>
             </div>
           </div>
         </div>
-
-       
       </div>
     </section>
   );

@@ -3,26 +3,27 @@
 /* Design System - Villa Astana (Shopify-Style Premium Event Space) */
 
 :root {
-  /* Color Palette */
-  --primary: #0b4f30;      /* Emerald Green Mewah */
-  --primary-hover: #083c24;
-  --primary-light: #f0f7f4;
-  --accent: #c5a85c;       /* Muted Luxury Gold */
-  --accent-hover: #b0944d;
-  --accent-light: #faf7f0;
-  --text-dark: #121814;    /* Hampir Hitam bertona hijau gelap */
-  --text-medium: #4a544e;  /* Kelabu sederhana */
-  --text-muted: #7c8880;   /* Kelabu pudar */
+  /* Color Palette - Melayu Nusantara Heritage */
+  --primary: #16382b;      /* Deep Forest Emerald / Hijau Warisan */
+  --primary-hover: #0e261d;
+  --primary-light: #f2f7f4;
+  --accent: #c5a059;       /* Songket Royal Gold / Emas Melayu */
+  --accent-hover: #b08d44;
+  --accent-light: #faf6ed;
+  --wood-dark: #2a1810;    /* Kayu Jati / Cengal Gelap */
+  --text-dark: #121815;    /* Hitam lembut */
+  --text-medium: #45504a;  /* Kelabu arang */
+  --text-muted: #75827b;   /* Kelabu pudar */
   --bg-primary: #ffffff;
-  --bg-secondary: #f6f8f7; /* Latar belakang lembut */
-  --border: #e2e8e5;
-  --border-light: #f0f4f2;
+  --bg-secondary: #fbf9f5; /* Lembut ala linen / gading */
+  --border: #e6e3dc;
+  --border-light: #f3efe6;
   
   /* Gallery settings */
   --gallery-cols: 3;
   
   /* Typography */
-  --font-heading: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', 'Cinzel', Georgia, serif;
   --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   
   /* Spacing */

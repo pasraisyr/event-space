@@ -2,7 +2,6 @@ import React from 'react';
 import { visualAssets } from '../data/landingData';
 
 export const Gallery: React.FC = () => {
-  // Inline styles to guarantee immediate application and bypass any stylesheet caching issues
   const gridStyle: React.CSSProperties = {
     display: 'grid',
     gridTemplateColumns: 'repeat(var(--gallery-cols, 3), 1fr)',
@@ -16,7 +15,7 @@ export const Gallery: React.FC = () => {
     overflow: 'hidden',
     aspectRatio: '4 / 3',
     height: 'auto',
-    boxShadow: '0 4px 12px rgba(11, 79, 48, 0.06)',
+    boxShadow: '0 4px 12px rgba(44, 24, 16, 0.08)',
     cursor: 'pointer'
   };
 
@@ -32,89 +31,88 @@ export const Gallery: React.FC = () => {
     <section id="galeri" className="section">
       <div className="container">
         <div className="section-header">
-          <span className="badge">Visual Villa</span>
-          <h2>Sudut Rekaan Estetik</h2>
-          <p>Terokai keindahan ruang luaran dan dalaman Villa Astana yang sedia menyerikan hari bahagia anda.</p>
+          <span className="badge">Galeri Visual</span>
+          <h2>Keindahan Seni Bina & Suasana</h2>
+          <p>Saksikan keistimewaan Rumah Seri Harmoni dengan seni bina warisan kayu Melayu Nusantara dan persekitaran dewan semi terbuka yang memukau.</p>
         </div>
 
-        {/* Inline styles guarantee 3 columns: 3 deret atas, 3 deret bawah */}
         <div className="gallery-grid" style={gridStyle}>
           
           <div className="gallery-item" style={itemStyle}>
             <img 
               src={visualAssets.gallery[0]} 
-              alt="Villa Astana Kolam Renang Twilight" 
+              alt="Rumah Seri Harmoni Suasana Malam Berhias Lampu & Pelamin" 
               className="gallery-img" 
               style={imgStyle}
             />
             <div className="gallery-overlay">
-              <h4>Kolam Renang Senja</h4>
-              <p>Pandangan tepi kolam dengan pencahayaan romantis</p>
+              <h4>Rumah Seri Harmoni</h4>
+              <p>Suasana gemilang majlis perkahwinan tradisional di waktu senja</p>
             </div>
           </div>
 
           <div className="gallery-item" style={itemStyle}>
             <img 
               src={visualAssets.gallery[1]} 
-              alt="Dekorasi Pelamin Perkahwinan" 
+              alt="Rumah Warisan Melayu Tradisional" 
               className="gallery-img" 
               style={imgStyle}
             />
             <div className="gallery-overlay">
-              <h4>Hiasan Dewan Resepsi</h4>
-              <p>Persediaan pelaminan perkahwinan yang menawan</p>
+              <h4>Rumah Warisan Melayu</h4>
+              <p>Seni ukiran tiang dan anjung kayu nusantara yang mempesonakan</p>
             </div>
           </div>
 
           <div className="gallery-item" style={itemStyle}>
             <img 
               src={visualAssets.gallery[2]} 
-              alt="Setup Meja Halaman" 
+              alt="Dewan Semi Terbuka Berbumbung" 
               className="gallery-img" 
               style={imgStyle}
             />
             <div className="gallery-overlay">
-              <h4>Halaman Garden Party</h4>
-              <p>Susun atur meja banquet di bawah rimbunan pokok</p>
+              <h4>Dewan Semi Terbuka</h4>
+              <p>Ruang majlis berbumbung luas dengan pengudaraan segar semulajadi</p>
             </div>
           </div>
 
           <div className="gallery-item" style={itemStyle}>
             <img 
               src={visualAssets.gallery[3]} 
-              alt="Kolam Renang Siang" 
+              alt="Ruang Dalaman Kayu Jati Tradisional" 
               className="gallery-img" 
               style={imgStyle}
             />
             <div className="gallery-overlay">
-              <h4>Aktiviti Rekreasi Siang</h4>
-              <p>Kolam renang persendirian yang menyegarkan</p>
+              <h4>Ruang Rehat & Bersiap</h4>
+              <p>Dalaman kayu jati berhawa dingin untuk keselesaan mempelai</p>
             </div>
           </div>
 
           <div className="gallery-item" style={itemStyle}>
             <img 
               src={visualAssets.gallery[4]} 
-              alt="Bilik Inap Utama" 
+              alt="Anjung & Serambi Rumah Kayu" 
               className="gallery-img" 
               style={imgStyle}
             />
             <div className="gallery-overlay">
-              <h4>Bilik Tidur Utama (Inap)</h4>
-              <p>Kemudahan penginapan mewah untuk keluarga pengantin</p>
+              <h4>Anjung & Serambi Tradisi</h4>
+              <p>Sudut klasik yang indah untuk fotografi bertemakan adat Melayu</p>
             </div>
           </div>
 
           <div className="gallery-item" style={itemStyle}>
             <img 
               src={visualAssets.gallery[5]} 
-              alt="Pintu Gerbang Malam" 
+              alt="Laman Hijau & Kawasan Terbuka" 
               className="gallery-img" 
               style={imgStyle}
             />
             <div className="gallery-overlay">
-              <h4>Lampu Hiasan Malam</h4>
-              <p>Suasana gemerlapan lampu dongeng di taman</p>
+              <h4>Laman Hijau & Parkir</h4>
+              <p>Kawasan lapang dan parking luas serta selamat untuk tetamu</p>
             </div>
           </div>
 
@@ -123,5 +121,4 @@ export const Gallery: React.FC = () => {
     </section>
   );
 };
-
 export default Gallery;

@@ -1,3 +1,4 @@
+import posterImg from '../assets/gambar/poster.jpg';
 import pic1 from '../assets/gambar/pic1.jpeg';
 import pic2 from '../assets/gambar/pic2.jpeg';
 import pic3 from '../assets/gambar/pic3.jpeg';
@@ -9,7 +10,9 @@ export interface Pakej {
   id: string;
   nama: string;
   harga: number;
+  minPax: number;
   maxPax: number;
+  badge?: string;
   deskripsi: string;
   ciri: string[];
 }
@@ -36,135 +39,180 @@ export interface Faq {
   a: string;
 }
 
-// Visual asset URLs (Local Assets)
+// Venue Profile & Metadata
+export const venueDetails = {
+  nama: "Rumah Seri Harmoni",
+  tema: "Melayu • Nusantara",
+  tagline: "Tempat Event Wedding Tradisional",
+  deskripsi: "Menyediakan ruang acara perkahwinan tradisional Melayu Nusantara yang eksklusif dengan dewan semi terbuka, seni bina rumah warisan, pelamin tradisional, dan kawasan parkir yang luas serta selamat.",
+  fiturUtama: [
+    {
+      title: "Pelamin Tradisional Melayu",
+      desc: "Dekorasi pelamin klasik berunsur warisan Melayu & Nusantara dengan seni ukiran indah dan sentuhan bunga segar.",
+      icon: "sparkles"
+    },
+    {
+      title: "Dewan Semi Terbuka",
+      desc: "Konsep dewan berbumbung terbuka yang nyaman dengan pengudaraan semulajadi, menyatukan suasana laman dan rumah tradisi.",
+      icon: "home"
+    },
+    {
+      title: "Kapasiti 100 - 250 Pax",
+      desc: "Keluasan ruang yang ideal dan selesa untuk majlis perkahwinan intim bersama keluarga dan sahabat terdekat.",
+      icon: "users"
+    },
+    {
+      title: "Parking Luas & Selamat",
+      desc: "Kawasan parkir kenderaan tetamu yang lapang, tersusun rapi serta selamat di perkarangan venue.",
+      icon: "car"
+    }
+  ]
+};
+
+// Visual asset URLs
 export const visualAssets = {
-  hero: pic1,
-  interior: pic2,
-  garden: pic3,
+  hero: posterImg,
+  poster: posterImg,
+  dewan: pic5,
+  rumahTradisi: pic4,
+  anjung: pic3,
+  ruangBersiap: pic2,
+  laman: pic1,
   gallery: [
-    pic1,
-    pic2,
-    pic3,
+    posterImg,
     pic4,
     pic5,
+    pic2,
+    pic3,
     pic1
   ]
 };
 
-// Packages list
+// Packages list (Configured specifically for 100 - 250 Pax scale)
 export const senaraiPakej: Pakej[] = [
   {
-    id: 'santai',
-    nama: 'Pakej Santai Acara',
-    harga: 1500,
-    maxPax: 100,
-    deskripsi: 'Sesuai untuk majlis kecil, perhimpunan keluarga, atau hari lahir.',
+    id: 'nikah-harmoni',
+    nama: 'Pakej Nikah Tradisi Harmoni',
+    harga: 2200,
+    minPax: 100,
+    maxPax: 150,
+    badge: 'Sesuai Majlis Intim',
+    deskripsi: 'Pakej istimewa majlis akad nikah & pertunangan bertemakan adat Melayu tradisional.',
     ciri: [
-      'Sewa ruang (Dewan Terbuka & Laman)',
-      'Penggunaan selama 6 Jam (Siang / Malam)',
-      'Sistem siar raya asas (Basic PA system)',
-      'Bilik persediaan berhawa dingin',
-      'Meja & 50 kerusi banquet asas',
-      'Kapasiti maksimum 100 tetamu'
+      'Sewa Dewan Semi Terbuka & Anjung Rumah Tradisi (6 Jam)',
+      'Pelamin Tradisional Melayu (Mini Dais Klasik)',
+      'Kapasiti selesa untuk 100 - 150 tetamu',
+      'Ruang bersiap berhawa dingin (Rumah Kayu Warisan)',
+      'Set meja & 80 kerusi asas tetamu',
+      'Sistem siar raya asas untuk lafaz akad nikah',
+      'Parking luas & selamat di dalam kawasan venue'
     ]
   },
   {
-    id: 'eksklusif',
-    nama: 'Pakej Eksklusif Resepsi',
-    harga: 2800,
+    id: 'resepsi-melayu',
+    nama: 'Pakej Resepsi Seri Melayu',
+    harga: 3800,
+    minPax: 150,
     maxPax: 250,
-    deskripsi: 'Paling popular! Sesuai untuk resepsi perkahwinan, nikah, dan bertunang.',
+    badge: 'Paling Popular',
+    deskripsi: 'Pakej penuh resepsi perkahwinan tradisional Melayu Nusantara dengan kemudahan lengkap.',
     ciri: [
-      'Sewa keseluruhan Villa & Laman Utama',
-      'Penggunaan selama 10 Jam',
-      'Sistem Audio & Karaoke Premium',
-      '2 bilik bersiap utama berhawa dingin',
-      'Meja VIP & 150 kerusi banquet berbalut',
-      'Laman berumput untuk upacara nikah',
-      'Pengurusan sampah & pembersihan'
+      'Sewa penuh Dewan Semi Terbuka, Anjung & Laman (8 Jam)',
+      'Pelamin Tradisional Melayu Eksklusif berserta hiasan pentas',
+      'Kapasiti maksimum sehingga 250 tetamu',
+      'Meja santapan beradab pengantin bertema Melayu Nusantara',
+      '2 bilik persediaan berhawa dingin untuk pengantin & keluarga',
+      '150 kerusi banquet beralas kemas & meja tetamu',
+      'Sistem Audio & alunan muzik tradisional Nusantara',
+      'Kawasan parking luas & selamat untuk semua tetamu',
+      'Khidmat pengurusan sampah & pembersihan majlis'
     ]
   },
   {
-    id: 'premium',
-    nama: 'Pakej Villa + Inap (Overnight)',
-    harga: 4500,
-    maxPax: 300,
-    deskripsi: 'Pakej lengkap untuk acara dan penginapan keluarga (5 bilik tidur mewah).',
+    id: 'gemilang-nusantara',
+    nama: 'Pakej Gemilang Nusantara VIP',
+    harga: 5200,
+    minPax: 200,
+    maxPax: 250,
+    badge: 'Pakej Eksklusif VIP',
+    deskripsi: 'Pakej perkahwinan beradat serba mewah dengan penggunaan eksklusif sepanjang hari.',
     ciri: [
-      'Sewa Villa Astana + Penginapan 2 Hari 1 Malam',
-      '5 bilik tidur berhawa dingin (memuatkan 15-20 orang)',
-      'Kolam renang persendirian tanpa had',
-      'Sewa Laman Acara selama 12 Jam',
-      'Sistem audio pentas & karaoke premium',
-      'Kelengkapan BBQ & dapur lengkap',
-      'Ruang parking luas (sehingga 40 buah kereta)'
+      'Penggunaan eksklusif keseluruhan Rumah Seri Harmoni (10 Jam)',
+      'Dewan Semi Terbuka berhias penuh lampu ambient & floral',
+      'Set Pelamin Tradisional Melayu Premium & Busana Gerbang Masuk',
+      'Kapasiti optimum 200 - 250 tetamu serentak',
+      'Bilik bersiap mewah bertemakan kayu tradisional Melayu',
+      'Set Meja Makan Beradab Diraja + Pelayan Khas VIP',
+      'Sistem Audio Premium, Mikrofon & Playlist Tradisi Melayu',
+      'Ruang parking luas, berpagar & kawalan keselamatan',
+      'Hanya 1 majlis sehari — Privasi 100% terjamin'
     ]
   }
 ];
 
-// Add-ons list with serializable icon names
+// Add-ons list
 export const senaraiAddons: Addon[] = [
   { 
     id: 'catering', 
-    nama: 'Buffet Catering', 
-    harga: 25, 
+    nama: 'Buffet Katering Melayu Tradisional (Nasi Minyak & Lauk Tradisi)', 
+    harga: 28, 
     isPerPax: true,
     iconName: 'utensils'
   },
   { 
     id: 'audio', 
-    nama: 'Audio & Karaoke Premium', 
-    harga: 300, 
+    nama: 'Sistem Audio & Gamelan/Lagu Tradisional', 
+    harga: 350, 
     isPerPax: false,
     iconName: 'volume'
   },
   { 
     id: 'deco', 
-    nama: 'Pelaminan & Pintu Gerbang', 
+    nama: 'Naik Taraf Pelamin Tradisional & Pintu Gerbang Melayu', 
     harga: 1200, 
     isPerPax: false,
     iconName: 'sparkles'
   },
   { 
     id: 'photo', 
-    nama: 'Fotografi Acara (4 Jam)', 
-    harga: 800, 
+    nama: 'Pakej Fotografi Majlis Tradisional (Lengkap Album)', 
+    harga: 950, 
     isPerPax: false,
     iconName: 'camera'
   },
   { 
     id: 'canopy', 
-    nama: 'Sewa Kanopi (3 Set Khemah)', 
-    harga: 600, 
+    nama: 'Set Kanopi Laman & Meja Tambahan', 
+    harga: 650, 
     isPerPax: false,
     iconName: 'tent'
   }
 ];
 
-// Testimonials data
+// Testimonials data (Authentic for Rumah Seri Harmoni)
 export const senaraiTestimonial: Testimonial[] = [
   {
     id: 't1',
-    nama: 'Puan Noraini Hanim',
-    singkatan: 'NH',
-    majlis: 'Majlis Pernikahan & Resepsi (Julai 2025)',
-    ulasan: 'Sangat berpuas hati sewa Villa Astana untuk majlis nikah anak perempuan saya. Kawasan kolam renang sangat bersih dan tetamu puji landskap taman yang tersusun kemas. Staf pengurusan pun sangat mesra membantu.',
+    nama: 'Puan Siti Nurhaliza & En. Khairul',
+    singkatan: 'SK',
+    majlis: 'Majlis Resepsi Tradisional (200 Pax)',
+    ulasan: 'Alhamdulillah majlis perkahwinan kami di Rumah Seri Harmoni berjalan lancar. Konsep dewan semi terbuka sangat berangin dan redup, pelamin tradisional Melayu nampak sangat autentik dan elegan. Tetamu pun puji ruang parking yang luas dan selamat!',
     bintang: 5
   },
   {
     id: 't2',
-    nama: 'Encik Ahmad Haziq',
-    singkatan: 'AH',
-    majlis: 'Family Reunion & BBQ (Disember 2025)',
-    ulasan: 'Kami ambil Pakej Villa + Inap untuk reunion keluarga. Kanak-kanak memang suka kolam renang yang luas. Bilik-bilik tidur sangat bersih taraf hotel bertaraf 5 bintang. Dapur pula lengkap dengan peralatan BBQ.',
+    nama: 'Encik Faris Danial & Pasangan',
+    singkatan: 'FD',
+    majlis: 'Majlis Akad Nikah Tradisi (120 Pax)',
+    ulasan: 'Sangat sesuai untuk majlis nikah bertemakan Melayu Nusantara. Suasana rumah kayu klasik memberi nostalgia kampung yang indah. Bilik bersiap sejuk berhawa dingin dan pengurusan majlis amat memudahkan urusan kami sekeluarga.',
     bintang: 5
   },
   {
     id: 't3',
-    nama: 'Puan Siti Maryam',
-    singkatan: 'SM',
-    majlis: 'Sambutan Hari Lahir Ke-8 (Mac 2026)',
-    ulasan: 'Tempat terbaik untuk menganjurkan sambutan hari lahir. Anak-anak sangat enjoy mandi kolam manakala golongan bapa pula seronok ber-karaoke di dewan berbumbung. Harga sewa juga sangat berpatutan dengan fasiliti.',
+    nama: 'Datin Mariana Mohd',
+    singkatan: 'MM',
+    majlis: 'Majlis Walimatulurus & Bertunang (220 Pax)',
+    ulasan: 'Kapasiti 100-250 pax memang kena sangat dengan majlis kami yang intim dan eksklusif. Dewan semi terbuka memberi pencahayaan semulajadi yang sangat cantik dalam gambar perkahwinan. Pilihan terbaik untuk majlis wedding tradisional!',
     bintang: 5
   }
 ];
@@ -172,32 +220,39 @@ export const senaraiTestimonial: Testimonial[] = [
 // FAQs data
 export const senaraiFaq: Faq[] = [
   {
-    q: 'Adakah Villa Astana menyediakan perkhidmatan catering sekali?',
-    a: 'Ya, kami menyediakan pakej makanan (Buffet Catering) berkualiti tinggi bermula serendah RM25/pax. Walau bagaimanapun, anda juga dibenarkan membawa katering luar secara percuma tanpa sebarang caj tambahan.'
+    q: 'Berapakah kapasiti tetamu yang sesuai di Rumah Seri Harmoni?',
+    a: 'Rumah Seri Harmoni direka khas untuk kapasiti antara 100 hingga 250 orang tetamu dalam satu masa. Keluasan ini sangat ideal untuk majlis perkahwinan intim, resepsi beradat, dan majlis nikah yang mesra tetamu.'
   },
   {
-    q: 'Berapa ramaikah tetamu yang boleh dimuatkan dalam satu-satu masa?',
-    a: 'Kawasan dewan terbuka dan laman utama kami boleh memuatkan sehingga 300 tetamu serentak. Jika acara anda berkonsepkan layan diri bergilir (open house), kami boleh menampung sehingga 800 tetamu sepanjang tempoh acara.'
+    q: 'Apakah konsep Dewan Semi Terbuka di venue ini?',
+    a: 'Dewan Semi Terbuka kami merupakan dewan berbumbung penuh dengan sisi terbuka yang berlatarbelakangkan taman dan rumah kayu warisan. Konsep ini memberikan pengudaraan semulajadi yang nyaman, teduh dan tidak panas.'
   },
   {
-    q: 'Adakah bilik penginapan disediakan jika mengambil Pakej Harian?',
-    a: 'Pakej Santai dan Pakej Eksklusif hanya menyediakan bilik persediaan berhawa dingin (1-2 bilik) untuk bersiap dan berehat sepanjang acara. Jika anda memerlukan penginapan bermalam, sila pilih "Pakej Villa + Inap" yang merangkumi keseluruhan 5 bilik tidur mewah.'
+    q: 'Adakah Pelamin Tradisional Melayu sudah disediakan dalam pakej?',
+    a: 'Ya, pakej kami merangkumi susun atur Pelamin Tradisional Melayu yang mengetengahkan seni ukiran warisan Nusantara dan hiasan flora eksklusif. Anda juga boleh memilih khidmat naiktaraf rekaan pelamin mengikut citarasa tema anda.'
   },
   {
-    q: 'Bagaimanakah proses bayaran deposit dan pembatalan?',
-    a: 'Untuk tempahan tarikh, bayaran deposit tempahan sebanyak RM500 diperlukan. Baki pembayaran perlu dijelaskan sekurang-kurangnya 2 minggu sebelum tarikh acara. Deposit tidak akan dikembalikan sekiranya pembatalan dibuat dalam tempoh kurang dari 30 hari dari tarikh acara.'
+    q: 'Bagaimanakah dengan kemudahan parkir kenderaan untuk tetamu?',
+    a: 'Kami menyediakan kawasan parking yang luas, tersusun dan selamat di perkarangan venue bagi memastikan keselesaan dan keselamatan kenderaan tuan rumah serta tetamu jemputan.'
   },
   {
-    q: 'Adakah ruang parkir kenderaan yang mencukupi untuk tetamu?',
-    a: 'Ya, kawasan hadapan Villa Astana mempunyai ruang parkir khas berpagar untuk 10 buah kereta VIP, manakala kawasan luar jalan sekitar halaman villa diteduhi pokok-pokok dan mampu menampung sehingga 40 kenderaan tetamu dengan selamat.'
+    q: 'Adakah Rumah Seri Harmoni menerima lebih daripada satu majlis dalam sehari?',
+    a: 'Tidak. Bagi mengekalkan kualiti dan privasi majlis anda, kami hanya menerima SATU acara sahaja pada setiap tarikh tempahan (100% privasi eksklusif untuk anda sekeluarga).'
+  },
+  {
+    q: 'Bolehkah saya membawa khidmat katering luar?',
+    a: 'Ya, anda bebas menggunakan perkhidmatan katering luar tanpa sebarang caj tersembunyi, atau anda juga boleh memilih add-on buffet katering masakan Melayu tradisional yang kami sediakan.'
   }
 ];
 
 // Contact info
 export const contactInfo = {
-  alamat: "Lot 123, Jalan Sungai Tua, 68100 Batu Caves, Selangor, Malaysia",
-  telefon: "+60 12-345 6789",
-  telefonRaw: "60123456789", // Untuk link WhatsApp
-  email: "info@villaastana.com.my",
-  waktuLawat: "Sabtu & Ahad (10:00 Pagi - 5:00 Petang)"
+  namaVenue: "Rumah Seri Harmoni",
+  pegawai: "Puan Rozita",
+  tagline: "Tempat Event Wedding Tradisional (Melayu • Nusantara)",
+  alamat: "Kampung Warisan Budaya, Selangor, Malaysia",
+  telefon: "019-474 5349",
+  telefonRaw: "60194745349",
+  email: "info@rumahseriharmoni.com.my",
+  waktuLawat: "Sabtu & Ahad (10:00 Pagi - 5:00 Petang) - Atas Temujanji"
 };
