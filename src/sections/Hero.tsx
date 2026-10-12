@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
             <a href="#tempah" className="btn btn-accent">
               Semak Tarikh & Tempah <ArrowRight size={18} />
             </a>
-            <a href="#fasiliti" className="btn btn-accent">
+            <a href="#fasiliti" className="btn btn-secondary-hero">
               Terokai Fasiliti Utama
             </a>
           </div>

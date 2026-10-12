@@ -8,7 +8,21 @@ export const Form: React.FC = () => {
   const [eventType, setEventType] = useState<string>('Majlis Perkahwinan & Resepsi Tradisional');
   const [eventDate, setEventDate] = useState<string>('');
   const [paxCount, setPaxCount] = useState<string>('150');
+  const [customPax, setCustomPax] = useState<string>('');
   const [notes, setNotes] = useState<string>('');
+
+  const presets = ['100', '150', '200', '250'];
+
+  const handlePresetClick = (val: string) => {
+    setPaxCount(val);
+    setCustomPax('');
+  };
+
+  const handleCustomChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setCustomPax(val);
+    setPaxCount(val || '150');
+  };
 
   // Handle direct WhatsApp submission to Puan Rozita (019-474 5349)
   const handleSubmit = (e: React.FormEvent) => {
@@ -146,31 +160,32 @@ Mohon semak sama ada tarikh ini masih ada kekosongan. Terima kasih Puan Rozita!`
 
               {/* Berapa Pax */}
               <div className="form-group full-width">
-                <label htmlFor="paxCount" className="form-label">
+                <label htmlFor="paxCustomInput" className="form-label">
                   <Users size={16} /> Berapa Pax (Kapasiti Selesa: 100 - 250 Pax) *
                 </label>
-                <div className="pax-preset-wrap">
-                  {['100', '150', '200', '250'].map(pax => (
-                    <button
-                      type="button"
-                      key={pax}
-                      className={`pax-pill-btn ${paxCount === pax ? 'active' : ''}`}
-                      onClick={() => setPaxCount(pax)}
-                    >
-                      {pax} Pax
-                    </button>
-                  ))}
-                  <div className="pax-custom-input">
+                <div className="pax-selector-group">
+                  <div className="pax-preset-row">
+                    {presets.map(pax => (
+                      <button
+                        type="button"
+                        key={pax}
+                        className={`pax-pill-btn ${paxCount === pax && !customPax ? 'active' : ''}`}
+                        onClick={() => handlePresetClick(pax)}
+                      >
+                        {pax} Pax
+                      </button>
+                    ))}
+                  </div>
+                  <div className="pax-custom-row">
                     <input
-                      id="paxCount"
+                      id="paxCustomInput"
                       type="number"
                       min="50"
                       max="300"
                       className="form-input"
-                      placeholder="Lain-lain jumlah pax"
-                      value={paxCount}
-                      onChange={(e) => setPaxCount(e.target.value)}
-                      required
+                      placeholder="Atau taip jumlah pax kustom (cth: 180)"
+                      value={customPax}
+                      onChange={handleCustomChange}
                     />
                   </div>
                 </div>
@@ -195,9 +210,15 @@ Mohon semak sama ada tarikh ini masih ada kekosongan. Terima kasih Puan Rozita!`
               <div className="form-group full-width mt-sm">
                 <button
                   type="submit"
-                  className="btn btn-whatsapp-submit"
+                  className="btn-whatsapp-submit"
                 >
-                  <Phone size={20} fill="currentColor" /> Hantar WhatsApp ke Puan Rozita ({contactInfo.telefon})
+                  <span className="submit-btn-icon">
+                    <Phone size={22} fill="currentColor" />
+                  </span>
+                  <span className="submit-btn-content">
+                    <span className="submit-btn-title">Hantar WhatsApp ke Puan Rozita</span>
+                    <span className="submit-btn-sub">{contactInfo.telefon} • Semakan Segera</span>
+                  </span>
                 </button>
                 <p className="form-privacy-note">
                   * Butiran anda dihantar terus melalui WhatsApp rasmi Puan Rozita tanpa sebarang caj pendaftaran.

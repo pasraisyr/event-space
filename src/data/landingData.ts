@@ -71,7 +71,7 @@ export const venueDetails = {
 
 // Visual asset URLs
 export const visualAssets = {
-  hero: posterImg,
+  hero: pic4,
   poster: posterImg,
   dewan: pic5,
   rumahTradisi: pic4,
